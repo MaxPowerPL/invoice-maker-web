@@ -1,0 +1,294 @@
+/* Reset i zmienne */
+:root {
+    --primary-color: #2c3e50;
+    --border-color: #ddd;
+    --bg-color: #f3f4f6;
+    --paper-width: 210mm;
+    --paper-min-height: 297mm;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Panel sterowania */
+.control-panel {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-primary { background-color: #007bff; color: white; }
+.btn-primary:hover { background-color: #0056b3; }
+.btn-secondary { background-color: #6c757d; color: white; }
+.btn-danger { background-color: #dc3545; color: white; padding: 5px 10px; font-size: 12px; }
+
+/* Kartka A4 */
+.invoice-container {
+    background: white;
+    width: var(--paper-width);
+    min-height: var(--paper-min-height);
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Inputy wewnątrz faktury */
+input, textarea, select {
+    width: 100%;
+    border: 1px solid transparent;
+    padding: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    transition: 0.2s;
+}
+
+/* Poprawka dla daty */
+input.date-input {
+    width: auto;
+    min-width: 130px;
+}
+
+/* Stan aktywny/hover inputów */
+input:hover, textarea:hover, select:hover,
+input:focus, textarea:focus, select:focus {
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+    outline: none;
+    border-radius: 3px;
+}
+
+input:invalid, select:invalid {
+    border-bottom: 2px solid #dc3545;
+}
+
+textarea {
+    resize: none;
+    height: 4.5em;
+}
+
+/* Nagłówek */
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.editable-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.invoice-meta {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* POPRAWKA WYRÓWNANIA (FLEX) */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.input-group label {
+    width: 150px; /* Zwiększono szerokość, aby "Data wystawienia" się mieściła */
+    flex-shrink: 0; /* Zapobiega ściskaniu etykiety */
+    font-weight: 600;
+}
+
+.input-group input {
+    flex-grow: 1; /* Input zajmuje całą resztę miejsca */
+}
+
+/* Sekcja Sprzedawca/Nabywca z nowymi Labelami */
+.parties {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    gap: 40px;
+}
+
+.party-box {
+    width: 48%;
+}
+
+.party-box h3 {
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+/* Style dla grup pól z labelami */
+.field-group {
+    margin-bottom: 8px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+
+.field-group input {
+    width: 100%;
+    padding: 4px 5px;
+}
+
+.input-bold { font-weight: bold; }
+
+/* Tabela */
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.items-table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.items-table td {
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.items-table input, .items-table select {
+    text-align: right;
+}
+.items-table input[type="text"]:first-child {
+    text-align: left;
+}
+
+/* Poprawka SELECT dla VAT i JM - aby nie ucinało tekstu */
+.items-table select {
+    text-align-last: center;
+    padding-right: 5px;
+    min-width: 65px;
+}
+
+/* Podsumowanie */
+.summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.notes { width: 50%; }
+.totals { width: 40%; }
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.grand-total {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Stopka */
+.signatures {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.sign-box {
+    width: 40%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.sign-line {
+    border-bottom: 1px dotted #000;
+    margin-top: 40px;
+    height: 1px;
+}
+
+/* --- STYLE DO DRUKU --- */
+@media print {
+    @page {
+        margin: 0;
+        size: auto;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .invoice-container {
+        width: 100%;
+        box-shadow: none;
+        padding: 20px 40px;
+        min-height: auto;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: transparent;
+    }
+
+    input, textarea, select {
+        border: none !important;
+        background: transparent !important;
+        padding: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none !important;
+    }
+
+    select {
+        text-indent: 1px;
+        text-overflow: '';
+        padding-right: 0;
+    }
+}
