@@ -49,7 +49,7 @@
 
 Aplikacja została zbudowana w oparciu o **Vanilla JavaScript** (bez zbędnych frameworków), co gwarantuje jej szybkość i lekkość. Kluczowym elementem jest zaawansowany arkusz stylów CSS (`@media print`), który sprawia, że po kliknięciu "Drukuj", strona internetowa zamienia się w profesjonalnie sformatowany dokument A4, gotowy do zapisu jako PDF lub fizycznego wydruku.
 
-### 🎯 Aktualna Wersja: `v1.0.0 (Stable)`
+### 🎯 Aktualna Wersja: `v1.0 (Stable)`
 Pierwsza stabilna wersja zawierająca pełną walidację danych (NIP, konta bankowe), dynamiczne przeliczanie stawek VAT oraz dopracowany szablon wydruku.
 
 ---
@@ -181,7 +181,7 @@ Plany rozwoju projektu:
 
 ## 🐛 Znane Problemy i Rozwiązania
 
-### ✅ Naprawione w v1.0.0:
+### ✅ Naprawione w v1.0:
 - **Formatowanie daty**: Naprawiono problem z wyrównaniem etykiety "Data wystawienia" względem innych pól (zastosowano `flex-shrink: 0`).
 - **Input Miasta**: Zablokowano możliwość wpisywania cyfr w polu miasta.
 - **Ikona Kalendarza**: Ikona wyboru daty jest teraz poprawnie ukrywana na wydruku PDF.
@@ -193,7 +193,7 @@ Plany rozwoju projektu:
 
 ## 📝 Changelog
 
-### v1.0.0 (Initial Release)
+### v1.0 (Initial Release)
 **NEW FEATURES:**
 - Kompletny generator faktur z podglądem na żywo.
 - System walidacji polskich formatów danych (NIP, Kod pocztowy, IBAN).
