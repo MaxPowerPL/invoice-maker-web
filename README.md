@@ -9,7 +9,7 @@
   *Stworzony z myślą o prostocie, druku A4 i bezpieczeństwie danych.*
 
   <p>
-    <a href="https://github.com/MaxPowerPL/invoice-maker-web/releases/tag/v1.1">
+    <a href="https://github.com/MaxPowerPL/invoice-maker-web/releases/tag/v1.0">
       <img src="https://img.shields.io/github/v/tag/MaxPowerPL/invoice-maker-web?label=VERSION&style=for-the-badge&color=238636" alt="Wersja" />
     </a>
     <a href="#">
